@@ -1,10 +1,4 @@
 from flask import Flask, jsonify,request,render_template
-import numpy as np
-import nltk
-from nltk.stem import WordNetLemmatizer 
-nltk.download("punkt")
-nltk.download('wordnet')
-nltk.download('omw-1.4')
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import TfidfVectorizer
 

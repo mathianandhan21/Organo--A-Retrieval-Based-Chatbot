@@ -26,10 +26,12 @@ def index():
     for line in __data:
         # for item in line.strip().split():
         __listdata.append(line)
+    print(__listdata)
     return render_template("app.html")
 
 @app.route("/get_response",methods=['GET','POST'])
 def get_response():
+    print("entered")
     user_response = request.form['user_text']
     query = user_response.lower()
     if query in ["hi", "hey", "is anyone there?", "hello", "hay", "hi organo","hey organo"]:
@@ -39,7 +41,7 @@ def get_response():
         __listdata.remove(query)
     else:
         bot_response = "See You Again"
-    
+    print(bot_response)
     response = jsonify({
             'bot_response':bot_response
     })
